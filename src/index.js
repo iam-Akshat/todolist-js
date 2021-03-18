@@ -1,4 +1,4 @@
-import createTodo from "./todo.js";
+import createTodo from "./models/todo.js";
 
 
 const newTodo = createTodo("test", "testing", "today", "high")
