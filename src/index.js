@@ -1,41 +1,36 @@
 import createTodo from "./models/todo.js";
 import createProject from "./models/project.js";
 import LocalDb from "./models/localDb.js"
-const mmy = new LocalDb()
-const projects = mmy.populateData()
+const db = new LocalDb()
+const projects = db.populateData()
 const homeTodoList = projects[0].todoList
 
-const displayTodo = document.querySelector('.todo');
-
-const display = document.querySelector('form');
-const btn = document.querySelector('.btn');
+const addProjectForm = document.querySelector('form.add-project');
+const addProjectButton = document.getElementById('add-project');
+const createProjectBtn = document.querySelector('.btn.create-project');
 const toggleDisplay = () => {
-  display.classList.toggle('d-none');
+    addProjectForm.classList.toggle('d-none');
 }
-
-btn.addEventListener('click', toggleDisplay);
-
-const getInput = () => {
-  const test = document.getElementbyId('createProject')[0].value
-  console.log(test);
+const resetCreateProjectForm = () => {
+    toggleDisplay()
+    const nameEr = document.querySelector('.project-name-error')
+    nameEr.innerText = ""
 }
+createProjectBtn.addEventListener('click', toggleDisplay);
+addProjectButton.addEventListener('click', (e) => {
+    e.preventDefault()
+    const name = document.getElementById('createProject')
+    if (name.value.length === 0) {
+        const nameEr = document.querySelector('.project-name-error')
+        nameEr.innerText = "name cant be empty"
+    } else {
+        resetCreateProjectForm()
+        db.addProject(name.value)
+    }
 
 
+})
 
-// const todoListItem = `
-//   <div class="card mr-4 mt-2" style="width: 18rem;" data-id="card-${}">
-//     <div class="card-body">
-//       <h5 class="card-title">${}</h5>
-//       <h6 class="card-subtitle mb-2 text-muted">${}</h6>
-//       <p class="card-text">${}</p>
-//       <p class="card-text read-status">${}</p>
 
-//       <button class="btn btn-danger">Remove</button>
-//       <button class="btn btn-success" id="read">Read</button>
-//     </div>
-//   </div>
-// `;
-
-// displayTodo.innerHTML += todoList;
 
 

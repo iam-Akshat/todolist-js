@@ -11,14 +11,15 @@
 <body>
   <div class="container">
   <nav>
-    <button class='btn btn-success'>Create Project</button>
+    <button class='btn btn-success create-project'>Create Project</button>
   </nav>
-<form>
+<form class="d-none add-project">
   <div class="mb-3">
     <label for="createProject" class="form-label">Create a Project</label>
-    <input type="text" class="form-control" id="createProject">
+    <input type="text" class="form-control" id="createProject" required>
+    <span class="project-name-error text-danger"></span>
   </div>
-  <button class="btn btn-success" type='submit'>Submit</button>
+  <button class="btn btn-success" type='submit' id="add-project">Submit</button>
 </form>
   <div class="todo">
 

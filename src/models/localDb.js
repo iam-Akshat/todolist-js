@@ -52,6 +52,11 @@ class LocalDb{
         return this.appData;
     }
 
+    addProject(name){
+        const newProject = createProject(name)
+        this.appData.push(newProject)
+        this.saveData()
+    }
 
 }
 
