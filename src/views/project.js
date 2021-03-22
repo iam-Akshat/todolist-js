@@ -14,6 +14,5 @@ const loadProject = (project,projectIndex) =>{
     project.todoList.forEach(todo => {
         renderTodo(todo)
     });
-    console.log(project.todoList,projectIndex);
 }
 export default loadProject;
