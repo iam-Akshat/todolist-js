@@ -1,0 +1,17 @@
+.list-container{
+    width: 100%;
+    max-width: 500px;
+}
+.todo-item{
+    width: 100%;
+    background-color: darkorange;
+}
+.todo-item button.more-btn{
+    height: 16px;
+    width: 8px;
+    border: none;
+    background-color: #690f0f;
+}
+.todo-item:hover .more-btn{
+    
+}

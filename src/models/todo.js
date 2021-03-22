@@ -1,3 +1,4 @@
+import db from "./localDb"
 class Todo {
   constructor(title, description, dueDate, priority, id, completed) {
     this.title = title
@@ -9,6 +10,7 @@ class Todo {
   }
   toggleCompleted(){
     this.completed = !this.completed
+    db.saveData()
   }
   changePriority(newPriority){
     this.priority = newPriority

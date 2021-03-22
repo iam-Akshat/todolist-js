@@ -59,5 +59,5 @@ class LocalDb{
     }
 
 }
-
-export default LocalDb;
+const globalDB = new LocalDb();
+export default globalDB;
