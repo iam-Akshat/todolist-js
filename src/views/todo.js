@@ -1,73 +1,74 @@
-import moreImage from "../assets/down_icon.svg"
-import delImage from "../assets/delete_icon.svg"
-import editImage from "../assets/edit_icon.svg"
-import db from "../models/localDb"
-const renderTodo = (todo,projectIndex) =>{
-    const listContainer =  document.querySelector('.list-container')
-    const todoElement = document.createElement('div')
-    todoElement.classList.add('todo-item', 'py-1', 'px-2','my-1', 'rounded')
+import moreImage from '../assets/down_icon.svg';
+import delImage from '../assets/delete_icon.svg';
+import editImage from '../assets/edit_icon.svg';
+import db from '../models/localDb';
 
-    const todoPreviewWrapper = document.createElement('div') 
-    todoPreviewWrapper.classList.add('d-flex','justify-content-between','align-items-center')
-    const todoPreview = document.createElement('div')
-    todoPreview.innerText = todo.title
-    todoPreview.classList.add('d-flex', 'justify-content-between', 'align-items-center', 'w-100')
-    const completedButton = document.createElement('input')
-    completedButton.classList.add('mr-3','p-1')
-    completedButton.addEventListener('click',(e)=>{
-        todo.toggleCompleted()
-    })
-    completedButton.type = 'checkbox'
-    completedButton.setAttribute('name','done')
-    completedButton.checked = todo.completed   
-    todoPreview.appendChild(completedButton)
+const renderTodo = (todo, projectIndex) => {
+  const listContainer = document.querySelector('.list-container');
+  const todoElement = document.createElement('div');
+  todoElement.classList.add('todo-item', 'py-1', 'px-2', 'my-1', 'rounded');
 
-    todoPreviewWrapper.appendChild(todoPreview)
+  const todoPreviewWrapper = document.createElement('div');
+  todoPreviewWrapper.classList.add('d-flex', 'justify-content-between', 'align-items-center');
+  const todoPreview = document.createElement('div');
+  todoPreview.innerText = todo.title;
+  todoPreview.classList.add('d-flex', 'justify-content-between', 'align-items-center', 'w-100');
+  const completedButton = document.createElement('input');
+  completedButton.classList.add('mr-3', 'p-1');
+  completedButton.addEventListener('click', () => {
+    todo.toggleCompleted();
+  });
+  completedButton.type = 'checkbox';
+  completedButton.setAttribute('name', 'done');
+  completedButton.checked = todo.completed;
+  todoPreview.appendChild(completedButton);
 
-    const moreButton = document.createElement('button')
-    moreButton.classList.add('more-btn')
-    moreButton.style.background = `url('${moreImage}')`
-    todoPreviewWrapper.appendChild(moreButton)
+  todoPreviewWrapper.appendChild(todoPreview);
 
-    todoElement.appendChild(todoPreviewWrapper)
+  const moreButton = document.createElement('button');
+  moreButton.classList.add('more-btn');
+  moreButton.style.background = `url('${moreImage}')`;
+  todoPreviewWrapper.appendChild(moreButton);
 
-    const todoDetail = document.createElement('div')
-    todoDetail.classList.add('d-none')
-    const todoDesc = document.createElement('div')
-    todoDesc.classList.add('bg-info')
-    todoDesc.innerText = todo.description
-    const todoPriority = document.createElement('div')
-    todoPriority.classList.add('bg-secondary')
-    todoPriority.innerText = todo.priority
-    const todoDue =  document.createElement('div')
-    todoDue.classList.add('bg-warning')
-    todoDue.innerText = todo.dueDate //set later
+  todoElement.appendChild(todoPreviewWrapper);
 
-    todoDetail.appendChild(todoDesc)
-    todoDetail.appendChild(todoPriority)
-    todoDetail.appendChild(todoDue)
-    moreButton.addEventListener('click',()=>{
-        todoDetail.classList.toggle('d-none')
-    })
-    todoElement.appendChild(todoDetail)
+  const todoDetail = document.createElement('div');
+  todoDetail.classList.add('d-none');
+  const todoDesc = document.createElement('div');
+  todoDesc.classList.add('bg-info');
+  todoDesc.innerText = todo.description;
+  const todoPriority = document.createElement('div');
+  todoPriority.classList.add('bg-secondary');
+  todoPriority.innerText = todo.priority;
+  const todoDue = document.createElement('div');
+  todoDue.classList.add('bg-warning');
+  todoDue.innerText = todo.dueDate; // set later
 
-    const ctaContainer = document.createElement('div') //create delete and edito icon container
-    ctaContainer.classList.add('todo-cta')
+  todoDetail.appendChild(todoDesc);
+  todoDetail.appendChild(todoPriority);
+  todoDetail.appendChild(todoDue);
+  moreButton.addEventListener('click', () => {
+    todoDetail.classList.toggle('d-none');
+  });
+  todoElement.appendChild(todoDetail);
 
-    const delButton = document.createElement('button') //delete icon logic and styles
-    delButton.style.background = `url("${delImage}") no-repeat center`
-    delButton.classList.add('bg-danger')
-    delButton.addEventListener('click',(e)=>{
-        db.deleteTodo(projectIndex,todo.id)
-        todoElement.remove()
-    })
-    ctaContainer.appendChild(delButton)
+  const ctaContainer = document.createElement('div'); // create delete and edito icon container
+  ctaContainer.classList.add('todo-cta');
 
-    const editButton = document.createElement('button') //edit icon logic and styles
-    editButton.style.background = `url("${editImage}") no-repeat center`
-    ctaContainer.appendChild(editButton)
+  const delButton = document.createElement('button'); // delete icon logic and styles
+  delButton.style.background = `url("${delImage}") no-repeat center`;
+  delButton.classList.add('bg-danger');
+  delButton.addEventListener('click', () => {
+    db.deleteTodo(projectIndex, todo.id);
+    todoElement.remove();
+  });
+  ctaContainer.appendChild(delButton);
 
-    todoDetail.appendChild(ctaContainer)
-    listContainer.appendChild(todoElement)
-}
-export default renderTodo; 
+  const editButton = document.createElement('button'); // edit icon logic and styles
+  editButton.style.background = `url("${editImage}") no-repeat center`;
+  ctaContainer.appendChild(editButton);
+
+  todoDetail.appendChild(ctaContainer);
+  listContainer.appendChild(todoElement);
+};
+export default renderTodo;
