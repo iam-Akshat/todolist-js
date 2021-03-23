@@ -1,3 +1,4 @@
+import { formatDistanceToNow } from 'date-fns';
 import moreImage from '../assets/down_icon.svg';
 import delImage from '../assets/delete_icon.svg';
 import editImage from '../assets/edit_icon.svg';
@@ -42,7 +43,7 @@ const renderTodo = (todo, projectIndex) => {
   todoPriority.innerText = todo.priority;
   const todoDue = document.createElement('div');
   todoDue.classList.add('bg-warning');
-  todoDue.innerText = todo.dueDate; // set later
+  todoDue.innerText = `Due ${formatDistanceToNow(new Date(todo.dueDate), { addSuffix: true })}`;
 
   todoDetail.appendChild(todoDesc);
   todoDetail.appendChild(todoPriority);
