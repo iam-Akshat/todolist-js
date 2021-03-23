@@ -6,15 +6,18 @@ import db from '../models/localDb';
 
 const renderTodo = (todo, projectIndex) => {
   const listContainer = document.querySelector('.list-container');
-  const todoElement = document.createElement('div');
+
+  const todoElement = document.createElement('div'); // main todo element
   todoElement.classList.add('todo-item', 'py-1', 'px-2', 'my-1', 'rounded');
 
-  const todoPreviewWrapper = document.createElement('div');
+  const todoPreviewWrapper = document.createElement('div'); // wrapper element for title
   todoPreviewWrapper.classList.add('d-flex', 'justify-content-between', 'align-items-center');
-  const todoPreview = document.createElement('div');
+
+  const todoPreview = document.createElement('div'); // element for title and checkbox and more button
   todoPreview.innerText = todo.title;
   todoPreview.classList.add('d-flex', 'justify-content-between', 'align-items-center', 'w-100');
-  const completedButton = document.createElement('input');
+
+  const completedButton = document.createElement('input'); // checkbox indicating completed or not
   completedButton.classList.add('mr-3', 'p-1');
   completedButton.addEventListener('click', () => {
     todo.toggleCompleted();
@@ -26,22 +29,25 @@ const renderTodo = (todo, projectIndex) => {
 
   todoPreviewWrapper.appendChild(todoPreview);
 
-  const moreButton = document.createElement('button');
+  const moreButton = document.createElement('button'); // button to show details
   moreButton.classList.add('more-btn');
   moreButton.style.background = `url('${moreImage}')`;
   todoPreviewWrapper.appendChild(moreButton);
 
   todoElement.appendChild(todoPreviewWrapper);
 
-  const todoDetail = document.createElement('div');
+  const todoDetail = document.createElement('div'); // detail element with details, due date, and priority
   todoDetail.classList.add('d-none');
-  const todoDesc = document.createElement('div');
+
+  const todoDesc = document.createElement('div'); // todo description
   todoDesc.classList.add('bg-info');
   todoDesc.innerText = todo.description;
-  const todoPriority = document.createElement('div');
+
+  const todoPriority = document.createElement('div'); // todo priority
   todoPriority.classList.add('bg-secondary');
   todoPriority.innerText = todo.priority;
-  const todoDue = document.createElement('div');
+
+  const todoDue = document.createElement('div'); // todo due date
   todoDue.classList.add('bg-warning');
   todoDue.innerText = `Due ${formatDistanceToNow(new Date(todo.dueDate), { addSuffix: true })}`;
 
