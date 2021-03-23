@@ -12,6 +12,13 @@
     border: none;
     background-color: #690f0f;
 }
-.todo-item:hover .more-btn{
-    
+.todo-cta{
+    margin-top: 16px;
+}
+.todo-cta button{
+    height: 20px;
+    border: none;
+    padding: 16px;
+    margin-right: 16px;
+    background-size: cover;
 }

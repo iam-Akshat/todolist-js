@@ -63,6 +63,11 @@ class LocalDb{
         this.saveData()
     }
 
+    deleteTodo(projectIndex,todoId){
+        this.appData[projectIndex].deleteTodo(todoId)
+        this.saveData()
+    }
+
 }
 const globalDB = new LocalDb();
 export default globalDB;

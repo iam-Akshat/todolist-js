@@ -1,4 +1,7 @@
 import moreImage from "../assets/down_icon.svg"
+import delImage from "../assets/delete_icon.svg"
+import editImage from "../assets/edit_icon.svg"
+import db from "../models/localDb"
 const renderTodo = (todo,projectIndex) =>{
     const listContainer =  document.querySelector('.list-container')
     const todoElement = document.createElement('div')
@@ -47,6 +50,24 @@ const renderTodo = (todo,projectIndex) =>{
         todoDetail.classList.toggle('d-none')
     })
     todoElement.appendChild(todoDetail)
+
+    const ctaContainer = document.createElement('div') //create delete and edito icon container
+    ctaContainer.classList.add('todo-cta')
+
+    const delButton = document.createElement('button') //delete icon logic and styles
+    delButton.style.background = `url("${delImage}") no-repeat center`
+    delButton.classList.add('bg-danger')
+    delButton.addEventListener('click',(e)=>{
+        db.deleteTodo(projectIndex,todo.id)
+        todoElement.remove()
+    })
+    ctaContainer.appendChild(delButton)
+
+    const editButton = document.createElement('button') //edit icon logic and styles
+    editButton.style.background = `url("${editImage}") no-repeat center`
+    ctaContainer.appendChild(editButton)
+
+    todoDetail.appendChild(ctaContainer)
     listContainer.appendChild(todoElement)
 }
 export default renderTodo; 

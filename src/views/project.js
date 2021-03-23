@@ -13,7 +13,7 @@ const loadProject = (project,projectIndex) =>{
     
     projectContainer.appendChild(listContainer)
     project.todoList.forEach(todo => {
-        renderTodo(todo)
+        renderTodo(todo,projectIndex)
     });
     rendernewTodoForm(projectIndex)
 }
