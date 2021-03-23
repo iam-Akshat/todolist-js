@@ -18,7 +18,7 @@ class Todo {
 }
 
 const createTodo = (title, description, dueDate, priority,id =  Date.now(),completed = false) => {
-  let newTodo = new Todo(title, description, dueDate, priority,id,false);
+  let newTodo = new Todo(title, description, dueDate, priority,id,completed);
   return newTodo;
 }
 

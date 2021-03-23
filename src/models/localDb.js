@@ -58,6 +58,11 @@ class LocalDb{
         this.saveData()
     }
 
+    addTodo(projectIndex,todo){
+        this.appData[projectIndex].addTodo(todo)
+        this.saveData()
+    }
+
 }
 const globalDB = new LocalDb();
 export default globalDB;

@@ -1,4 +1,5 @@
 import renderTodo from "./todo";
+import rendernewTodoForm from "./newTodoForm"
 const loadProject = (project,projectIndex) =>{
     const projectContainer = document.querySelector('main .project-container')
     projectContainer.innerHTML = ''
@@ -14,5 +15,6 @@ const loadProject = (project,projectIndex) =>{
     project.todoList.forEach(todo => {
         renderTodo(todo)
     });
+    rendernewTodoForm(projectIndex)
 }
 export default loadProject;

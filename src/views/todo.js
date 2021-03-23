@@ -2,21 +2,21 @@ import moreImage from "../assets/down_icon.svg"
 const renderTodo = (todo,projectIndex) =>{
     const listContainer =  document.querySelector('.list-container')
     const todoElement = document.createElement('div')
-    todoElement.classList.add('todo-item', 'py-1', 'px-2')
+    todoElement.classList.add('todo-item', 'py-1', 'px-2','my-1', 'rounded')
 
     const todoPreviewWrapper = document.createElement('div') 
     todoPreviewWrapper.classList.add('d-flex','justify-content-between','align-items-center')
     const todoPreview = document.createElement('div')
     todoPreview.innerText = todo.title
     todoPreview.classList.add('d-flex', 'justify-content-between', 'align-items-center', 'w-100')
-
     const completedButton = document.createElement('input')
-    completedButton.classList.add('mr-3')
+    completedButton.classList.add('mr-3','p-1')
     completedButton.addEventListener('click',(e)=>{
         todo.toggleCompleted()
     })
     completedButton.type = 'checkbox'
-    completedButton.checked = todo.completed    
+    completedButton.setAttribute('name','done')
+    completedButton.checked = todo.completed   
     todoPreview.appendChild(completedButton)
 
     todoPreviewWrapper.appendChild(todoPreview)
