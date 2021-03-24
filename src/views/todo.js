@@ -1,4 +1,5 @@
 import { formatDistanceToNow } from 'date-fns';
+import editTodoForm from './editTodoForm';
 import moreImage from '../assets/down_icon.svg';
 import delImage from '../assets/delete_icon.svg';
 import editImage from '../assets/edit_icon.svg';
@@ -73,6 +74,9 @@ const renderTodo = (todo, projectIndex) => {
 
   const editButton = document.createElement('button'); // edit icon logic and styles
   editButton.style.background = `url("${editImage}") no-repeat center`;
+  editButton.addEventListener('click', () => {
+    editTodoForm(todo, todoElement, projectIndex);
+  });
   ctaContainer.appendChild(editButton);
 
   todoDetail.appendChild(ctaContainer);
