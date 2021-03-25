@@ -1,0 +1,28 @@
+.list-container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.todo-item {
+  width: 100%;
+  background-color: darkorange;
+}
+
+.todo-item button.more-btn {
+  height: 16px;
+  width: 8px;
+  border: none;
+  background-color: #690f0f;
+}
+
+.todo-cta {
+  margin-top: 16px;
+}
+
+.todo-cta button {
+  height: 20px;
+  border: none;
+  padding: 16px;
+  margin-right: 16px;
+  background-size: cover;
+}
