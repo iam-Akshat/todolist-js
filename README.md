@@ -4,6 +4,12 @@
 
 
 
+## Screenshot
+![Screenshot](./src/assets/screenshot.png)
+
+## Live Demo
+- TBA
+
 ## Built With
 - JavaScript
 - HTML 5 and CSS 3.
@@ -12,7 +18,11 @@
 
 ## Getting Started
 
-Just fork it and you are good to go.
+- Clone the repository using ```git clone git@github.com:iam-Akshat/todolist-js.git```
+- cd into the cloned repository with ```cd todolist-js```
+- Run ```npm i```
+- Run ```npm run watch```
+- Open the index.html file in the 'dist' folder.
 
 ## Authors
 
@@ -22,9 +32,9 @@ Just fork it and you are good to go.
 - Twitter: [Akshat Sethi](https://twitter.com/akshatsethi)
 - LinkedIn: [Akshat Sethi](https://linkedin.com/in/akshatsethi)
 
-👤 **Ahmad Chata** 
-- Github: [@ahmadchata](https://github.com/ahmadchata) 
-- Twitter: [@ahmadchata](https://twitter.com/ahmadchata) 
+👤 **Ahmad Chata**
+- Github: [@ahmadchata](https://github.com/ahmadchata)
+- Twitter: [@ahmadchata](https://twitter.com/ahmadchata)
 - Linkedin: [Ahmad Chata](https://www.linkedin.com/in/ahmadchata/)
 
 ## 🤝 Contributing

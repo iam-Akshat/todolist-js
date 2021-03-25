@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-console
-const renderProjectsNav = (projectList, onClickHandler = () => { console.log('Add onclick handler function'); }) => {
+const renderProjectsNav = (projectList, onClickHandler = () => { }) => {
   const projectsNav = document.querySelector('aside.projects-nav');
   projectsNav.innerHTML = '';
   projectList.forEach((projectName, idx) => {
