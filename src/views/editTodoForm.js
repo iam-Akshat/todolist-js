@@ -3,7 +3,6 @@ import editTodoFormHandler from '../helpers/editTodoForm';
 
 const editTodoForm = (todo, todoElement, projectIndex) => {
   const editTodoForm = document.createElement('form');
-  // editTodoForm.classList.add('d-none');
   const currentDateTime = format((new Date(todo.dueDate)), 'yyyy-MM-dd\'T\'HH:mm', { awareOfUnicodeTokens: true });
   editTodoForm.innerHTML = `
     <div class="form-group">
