@@ -24,6 +24,9 @@
 - Run ```npm run watch```
 - Open the index.html file in the 'dist' folder.
 
+## Testing
+- App uses jest for testing, it should already be installed using `npm i` from getting    started section.
+- run `npm test` to start running tests.
 ## Authors
 
 👤 **Akshat Sethi**
@@ -49,8 +52,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- [The Odin Project](https://www.theodinproject.com/courses/javascript/lessons/todo-listy)
+- [The Odin Project](https://www.theodinproject.com/courses/javascript/lessons/todo-list)
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed
+This project is [MIT](https://opensource.org/licenses/MIT) licensed
