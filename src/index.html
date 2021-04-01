@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
-    
+  <div class="container">
+    <nav>
+      <button class='btn btn-success create-project'>Create Project</button>
+    </nav>
+    <form class="d-none add-project">
+      <div class="mb-3">
+        <label for="createProject" class="form-label">Create a Project</label>
+        <input type="text" class="form-control" id="createProject" required>
+        <span class="project-name-error text-danger"></span>
+      </div>
+      <button class="btn btn-success" type='submit' id="add-project">Submit</button>
+    </form>
+    <aside class="projects-nav"></aside>
+  </div>
+  <main>
+    <div class="container-fluid project-container d-flex flex-column align-items-center">
+      <div class="list-container mx-auto p-3">
+      </div>
+
+    </div>
+  </main>
 </body>
+
 </html>
